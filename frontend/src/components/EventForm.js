@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 
 import classes from './EventForm.module.css';
 
@@ -9,7 +9,7 @@ function EventForm({ method, event }) {
   }
 
   return (
-    <form className={classes.form}>
+    <Form method='post' className={classes.form}>
       <p>
         <label htmlFor="title">Title</label>
         <input id="title" type="text" name="title" required defaultValue={event ? event.title : ''}/>
@@ -20,7 +20,7 @@ function EventForm({ method, event }) {
       </p>
       <p>
         <label htmlFor="date">Date</label>
-        <input id="date" type="date" name="date" require defaultValue={event ? event.date : ''} />
+        <input id="date" type="date" name="date" required defaultValue={event ? event.date : ''} />
       </p>
       <p>
         <label htmlFor="description">Description</label>
@@ -32,7 +32,7 @@ function EventForm({ method, event }) {
         </button>
         <button>Save</button>
       </div>
-    </form>
+    </Form>
   );
 }
 
